@@ -2,26 +2,19 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
 using UnityEngine;
-using KModkit;
-using Rnd = UnityEngine.Random;
 
 public class QuadrupleSimpletonSquared : MonoBehaviour {
 
-    KMBombInfo Bomb;
     KMAudio Audio;
     public AudioClip solveSound;
 
     static int ModuleIdCounter = 1;
     int ModuleId;
-    private bool ModuleSolved;
 
     List<Button> buttons;
     void Awake () {
-        Bomb = GetComponent<KMBombInfo>();
         Audio = GetComponent<KMAudio>();
-
         ModuleId = ModuleIdCounter++;
         buttons = new List<Button>();
 
@@ -42,8 +35,6 @@ public class QuadrupleSimpletonSquared : MonoBehaviour {
 
     private void ButtonPressed(Button button)
     {
-
-        Debug.Log(button.Selectable.gameObject.name);
         if (button.Pressed)
         {
             return;
@@ -52,12 +43,9 @@ public class QuadrupleSimpletonSquared : MonoBehaviour {
         KMSelectable selectable = button.Selectable;
         selectable.AddInteractionPunch();
         
-        //todo add audio
         Audio.PlaySoundAtTransform(solveSound.name, transform);
 
-        //todo change button
         selectable.transform.Find("Text").GetComponent<TextMesh>().text = "Victory!";
-
 
         button.Pressed = true;
 
@@ -70,7 +58,6 @@ public class QuadrupleSimpletonSquared : MonoBehaviour {
     private void Solve()
     {
         Log("You pressed all the buttons");
-        ModuleSolved = true;
         GetComponent<KMBombModule>().HandlePass();
     }
 
@@ -79,7 +66,6 @@ public class QuadrupleSimpletonSquared : MonoBehaviour {
         Debug.Log($"[Quadruple Simpleton Squared #{ModuleId}] {s}");
     }
     
-
     private class Button
     {
         public KMSelectable Selectable { get; private set; }
