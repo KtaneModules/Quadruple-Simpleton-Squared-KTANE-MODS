@@ -1,0 +1,10 @@
+{
+  "name": "QuadrupleSimpletonSquared-Editor",
+  "references": [
+    "QuadrupleSimpletonSquared"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ],
+  "excludePlatforms": []
+}
