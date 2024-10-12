@@ -1687,8 +1687,7 @@ MonoBehaviour:
   IsPassThrough: 0
   ChildRowLength: 0
   Highlight: {fileID: 1202338479}
-  SelectableColliders:
-  - {fileID: 0}
+  SelectableColliders: []
   DefaultSelectableIndex: 0
   AllowSelectionWrapX: 0
   AllowSelectionWrapY: 0
@@ -4127,8 +4126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6121698d53055a46bc06b4583486331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bomb: {fileID: 0}
-  Audio: {fileID: 0}
+  solveSound: {fileID: 8300000, guid: 7449d017b2ae8ff44a5d02a435f5d705, type: 3}
 --- !u!114 &1311494620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6850,11 +6848,6 @@ Prefab:
     - target: {fileID: 439642, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114848120511536268, guid: 8814ea52310d2614a9feda02ec355ae4,
-        type: 2}
-      propertyPath: AudioVolume
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8814ea52310d2614a9feda02ec355ae4, type: 2}
